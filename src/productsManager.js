@@ -25,9 +25,9 @@ export class productManager {
 
         validaCode = this.products.find(prod => prod.code == product.code) ? 1 : 0
 
-        product.status===""||product.status==undefined?product.status=true:product.status=product.status // por defecto product.status es true
+        product.status === "" || product.status == undefined ? product.status = true : product.status = product.status // por defecto product.status es true
 
-    
+
         if (!validaCode) {
             let flag = 0
 
@@ -65,7 +65,7 @@ export class productManager {
         else {
             let diff = newLong - oldLong
             newArrray = this.products.slice(0, diff)
-            
+
         }
         return newArrray
 
@@ -78,28 +78,31 @@ export class productManager {
 
     }
 
-    async updateProduct(i, item, content) {
+    async updateProduct(i, content) {
         let update
-        if (item == 'id') { update = 'no se puede modificar id' }
+        update = await this.getProductById(i)
+        let keys = (Object.keys(content))
+        for (const key of keys) {
+            if (key != 'id') {
+                if (update == 'Producto no encontrado') {
+                    update = 'el producto no existe con el ID indicado'
+                }
+                else {
+                    update[key] = content[key]
+                    for (const k in this.products) {
+                        if (this.products[k].id == i) {
+                            this.products[k] = update
+                        }
 
-        else {
-            update = await this.getProductById(i)
-            if (update == 'Producto no encontrado') {
-                update = 'el producto no existe con el ID indicado'
-            }
-            else {
-                update[item] = content
-                for (const key in this.products) {
-                    if (this.products[key].id == i) {
-                        this.products[key] = update
-                        await fs.writeFile(this.path, JSON.stringify(this.products, null, 2))
                     }
-
                 }
             }
 
-
         }
+        await fs.writeFile(this.path, JSON.stringify(this.products, null, 2))
+
+
+
         return update
 
     }

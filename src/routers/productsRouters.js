@@ -7,43 +7,44 @@ export const productsRouter = Router()
 productsRouter.use(express.json())
 
 productsRouter.get('/', (req, res) => {
-   //console.log("desde product Router")
+    //console.log("desde product Router")
     res.send('<h1>consulta producto/h1>')
 })
 
 productsRouter.get('/pid', (req, res) => {
-     res.send('<h1>GET Productos :pid</h1>')
- })
+    res.send('<h1>GET Productos :pid</h1>')
+})
 
- productsRouter.post('/',async (req, res,next)=> {
+productsRouter.post('/', async (req, res, next) => {
 
     try {
         const products = new productManager('./src/static/productos.txt')
         //console.log({...req.body})
-        await products.addProduct({...req.body})
-        
-    } catch (error) {
-        res.status(400).json({message : error.message})
-    }
-   
+        await products.addProduct({ ...req.body })
 
+    } catch (error) {
+        res.status(400).json({ message: error.message })
+    }
     res.send('<h1>POST agrega elemnto</h1>')
- })
+})
 
- productsRouter.put('/:pid',async (req, res, next) => {
+productsRouter.put('/:pid', async (req, res, next) => {
 
-        try {
-            console.log(req.params)
-            console.log(req.body)
-            const products = new productManager('./src/static/productos.txt')
-            //await products.updateProduct(req.params.pid,req.body.)
-        //res.send('<h1>PUT Productos :pid</h1>')
+    try {
+        const products = new productManager('./src/static/productos.txt')
+        await products.updateProduct(req.params.pid, req.body)
     } catch (error) {
-        
+        res.status(400).json({ message: error.message })
     }
-     
- })
+    res.send('<h1>PUT actualiza elemento</h1>')
+})
 
- productsRouter.delete('/pid', (req,res)=>{
+productsRouter.delete('/:pid', async(req, res,next) => {
+    try {
+        const products = new productManager('./src/static/productos.txt')
+        await products.deleteProduct(req.params.pid)
+    } catch (error) {
+        res.status(400).json({ message: error.message })
+    }
     res.send('<h1>DELETE Productos :pid</h1>')
- })
+})

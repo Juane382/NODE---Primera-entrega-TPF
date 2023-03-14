@@ -1,33 +1,13 @@
 [
   {
-    "id": 1,
-    "title": "uno",
-    "description": "decripcion producto uno",
-    "price": 30,
-    "thumbnail": "imagen",
-    "code": "001",
-    "status": true,
-    "stock": 20
-  },
-  {
-    "id": 2,
-    "title": "dos",
-    "description": "decripcion producto dos",
-    "price": 30,
-    "thumbnail": "imagen",
-    "code": "002",
-    "status": true,
-    "stock": 20
-  },
-  {
     "id": 3,
-    "title": "tres",
-    "description": "decripcion producto tres",
+    "title": "desde post 2",
+    "description": "desde post ",
     "price": 30,
     "thumbnail": "imagen",
-    "code": "003",
-    "status": true,
-    "stock": 0
+    "code": "106",
+    "status": false,
+    "stock": 203
   },
   {
     "id": 4,
@@ -138,5 +118,15 @@
     "stock": 207,
     "status": true,
     "id": 14
+  },
+  {
+    "title": "desde post",
+    "description": "desde post ",
+    "price": 30,
+    "thumbnail": "imagen",
+    "code": "108",
+    "stock": 206,
+    "status": true,
+    "id": 15
   }
 ]
