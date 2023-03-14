@@ -1,0 +1,142 @@
+[
+  {
+    "id": 1,
+    "title": "uno",
+    "description": "decripcion producto uno",
+    "price": 30,
+    "thumbnail": "imagen",
+    "code": "001",
+    "status": true,
+    "stock": 20
+  },
+  {
+    "id": 2,
+    "title": "dos",
+    "description": "decripcion producto dos",
+    "price": 30,
+    "thumbnail": "imagen",
+    "code": "002",
+    "status": true,
+    "stock": 20
+  },
+  {
+    "id": 3,
+    "title": "tres",
+    "description": "decripcion producto tres",
+    "price": 30,
+    "thumbnail": "imagen",
+    "code": "003",
+    "status": true,
+    "stock": 0
+  },
+  {
+    "id": 4,
+    "title": "cuatro",
+    "description": "decripcion producto cuatro",
+    "price": 30,
+    "thumbnail": "imagen",
+    "code": "004",
+    "status": true,
+    "stock": 206
+  },
+  {
+    "id": 5,
+    "title": "cinco",
+    "description": "decripcion producto cinco",
+    "price": 30,
+    "thumbnail": "imagen",
+    "code": "005",
+    "status": true,
+    "stock": 450
+  },
+  {
+    "id": 6,
+    "title": "seis",
+    "description": "decripcion producto seis",
+    "price": 30,
+    "thumbnail": "imagen",
+    "code": "006",
+    "status": true,
+    "stock": 23
+  },
+  {
+    "id": 7,
+    "title": "siete",
+    "description": "decripcion producto siete",
+    "price": 30,
+    "thumbnail": "imagen",
+    "code": "007",
+    "status": true,
+    "stock": 24
+  },
+  {
+    "id": 8,
+    "title": "ocho",
+    "description": "decripcion producto ocho",
+    "price": 30,
+    "thumbnail": "imagen",
+    "code": "005",
+    "status": true,
+    "stock": 450
+  },
+  {
+    "id": 9,
+    "title": "nueve",
+    "description": "decripcion producto nueve",
+    "price": 30,
+    "thumbnail": "imagen",
+    "code": "006",
+    "status": true,
+    "stock": 23
+  },
+  {
+    "id": 10,
+    "title": "diez",
+    "description": "decripcion producto diez",
+    "price": 30,
+    "thumbnail": "imagen",
+    "code": "007",
+    "status": true,
+    "stock": 24
+  },
+  {
+    "title": "desde post",
+    "description": "desde post ",
+    "price": 30,
+    "thumbnail": "imagen",
+    "code": "104",
+    "stock": 206,
+    "status": true,
+    "id": 11
+  },
+  {
+    "title": "desde post",
+    "description": "desde post ",
+    "price": 30,
+    "thumbnail": "imagen",
+    "code": "102",
+    "stock": 206,
+    "status": true,
+    "id": 12
+  },
+  {
+    "title": "desde post",
+    "description": "desde post ",
+    "price": 30,
+    "thumbnail": "imagen",
+    "code": "103",
+    "stock": 207,
+    "status": true,
+    "id": 13
+  },
+  {
+    "title": "desde post",
+    "description": "desde post ",
+    "price": 30,
+    "thumbnail": "imagen",
+    "code": "105",
+    "stock": 207,
+    "status": true,
+    "id": 14
+  }
+]
