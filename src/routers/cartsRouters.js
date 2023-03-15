@@ -12,16 +12,16 @@ export const cartsRouter = Router()
 
 
 cartsRouter.get('/', (req, res) => {
-    //console.log("desde carts Router")
+   
     res.send('<h1>GET Carro</h1>')
 })
 
 cartsRouter.post('/', async (req, res, next) => {
     try {
-        //let carro = new cart('./src/static/carts.json')
+        
         let carro = new cart()
         addCart(carro)
-        //console.log(carro)
+        
         res.send('<h1>POST Carro</h1>')
     } catch (error) {
         res.status(400).json({ message: error.message })
@@ -29,7 +29,7 @@ cartsRouter.post('/', async (req, res, next) => {
 })
 
 cartsRouter.get('/:cid', async (req, res, next) => {
-    //console.log("desde carts Router")
+    
     try {
          let cart =await getCartById(req.params.cid)
         console.log(cart)
@@ -41,7 +41,7 @@ cartsRouter.get('/:cid', async (req, res, next) => {
 
 cartsRouter.post('/:cid/product/:pid', async (req, res, next) => {
     try {
-        //console.log(req.params.cid)
+        
         await addProductCart(req.params.cid,req.params.pid)
         res.send('<h1>POST :cid :pid Carro</h1>')
     } catch (error) {
