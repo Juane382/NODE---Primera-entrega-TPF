@@ -1,4 +1,5 @@
 import express, { Router } from "express";
+import { paths } from "../paths.js";
 import { product } from "../product.js";
 import { productManager } from "../productsManager.js";
 
@@ -6,9 +7,15 @@ import { productManager } from "../productsManager.js";
 export const productsRouter = Router()
 productsRouter.use(express.json())
 
-productsRouter.get('/', (req, res) => {
-    //console.log("desde product Router")
-    res.send('<h1>consulta producto/h1>')
+productsRouter.get('/', async (req, res, next) => {
+    try {
+        const products = new productManager(paths.products)
+        let product = JSON.stringify(await products.getProducts())
+        res.send(product)
+    } catch (error) {
+        res.status(400).json({ message: error.message })
+    }
+
 })
 
 productsRouter.get('/pid', (req, res) => {
@@ -18,8 +25,7 @@ productsRouter.get('/pid', (req, res) => {
 productsRouter.post('/', async (req, res, next) => {
 
     try {
-        const products = new productManager('./src/static/productos.txt')
-        //console.log({...req.body})
+        const products = new productManager(paths.products)
         await products.addProduct({ ...req.body })
 
     } catch (error) {
@@ -31,7 +37,7 @@ productsRouter.post('/', async (req, res, next) => {
 productsRouter.put('/:pid', async (req, res, next) => {
 
     try {
-        const products = new productManager('./src/static/productos.txt')
+        const products = new productManager(paths.products)
         await products.updateProduct(req.params.pid, req.body)
     } catch (error) {
         res.status(400).json({ message: error.message })
@@ -39,9 +45,9 @@ productsRouter.put('/:pid', async (req, res, next) => {
     res.send('<h1>PUT actualiza elemento</h1>')
 })
 
-productsRouter.delete('/:pid', async(req, res,next) => {
+productsRouter.delete('/:pid', async (req, res, next) => {
     try {
-        const products = new productManager('./src/static/productos.txt')
+        const products = new productManager(paths.products)
         await products.deleteProduct(req.params.pid)
     } catch (error) {
         res.status(400).json({ message: error.message })
