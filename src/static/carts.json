@@ -30,6 +30,10 @@
       {
         "pid": "5",
         "quantity": 2
+      },
+      {
+        "pid": "6",
+        "quantity": 4
       }
     ],
     "idc": 3

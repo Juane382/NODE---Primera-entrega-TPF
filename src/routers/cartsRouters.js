@@ -3,6 +3,7 @@
 import { Router } from "express";
 import { addProductCart } from "../addProductCart.js";
 import { addCart, cart } from "../cartsManager.js";
+import { getCartById } from "../getCartById.js";
 
 
 
@@ -20,16 +21,22 @@ cartsRouter.post('/', async (req, res, next) => {
         //let carro = new cart('./src/static/carts.json')
         let carro = new cart()
         addCart(carro)
-        console.log(carro)
+        //console.log(carro)
         res.send('<h1>POST Carro</h1>')
     } catch (error) {
         res.status(400).json({ message: error.message })
     }
 })
 
-cartsRouter.get('/cid', (req, res) => {
+cartsRouter.get('/:cid', async (req, res, next) => {
     //console.log("desde carts Router")
-    res.send('<h1>GET :cid Carro</h1>')
+    try {
+         let cart =await getCartById(req.params.cid)
+        console.log(cart)
+        res.send('<h1>GET :cid Carro</h1>')
+    } catch (error) {
+        
+    }
 })
 
 cartsRouter.post('/:cid/product/:pid', async (req, res, next) => {
