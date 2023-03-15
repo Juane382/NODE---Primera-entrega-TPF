@@ -42,8 +42,6 @@ export class productManager {
             flag === 0 ? product.id :
                 this.products.length === 0 ? product.id = 0 : product.id = ((this.products[this.products.length - 1].id) + 1) // id autoincremental segun el valor de id del ultimo elemento del array
             flag ? this.products.push(product) : console.log('pruducto incopleto') // si verifica se hace push a la lista de productos
-            //console.log(this.products)
-            //console.log(product)
             const json = JSON.stringify(this.products, null, 2)
             await fs.writeFile(this.path, json)
         }

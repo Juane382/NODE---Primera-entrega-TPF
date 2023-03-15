@@ -1,7 +1,7 @@
 
 
 import { Router } from "express";
-import { addProduct } from "../addProduct.js";
+import { addProductCart } from "../addProductCart.js";
 import { addCart, cart } from "../cartsManager.js";
 
 
@@ -35,9 +35,10 @@ cartsRouter.get('/cid', (req, res) => {
 cartsRouter.post('/:cid/product/:pid', async (req, res, next) => {
     try {
         //console.log(req.params.cid)
-        await addProduct(req.params.cid,req.params.pid)
+        await addProductCart(req.params.cid,req.params.pid)
+        res.send('<h1>POST :cid :pid Carro</h1>')
     } catch (error) {
         res.status(400).json({ message: error.message })
     }
-    res.send('<h1>POST :cid :pid Carro</h1>')
+    
 })
