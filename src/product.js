@@ -9,7 +9,7 @@ export class product {
         this.thumbnail = thumbnail;
         this.code = code;
         this.stock = stock;
-        this.status= status;
+        this.status = status;
     }
 
 
