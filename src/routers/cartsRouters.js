@@ -1,9 +1,9 @@
 
 
 import { Router } from "express";
-import { addProductCart } from "../addProductCart.js";
-import { addCart, cart } from "../cartsManager.js";
-import { getCartById } from "../getCartById.js";
+
+import { addCart, addProductCart, cart, getCartById } from "../cartsManager.js";
+
 
 
 

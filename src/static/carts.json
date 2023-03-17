@@ -34,8 +34,21 @@
       {
         "pid": "6",
         "quantity": 4
+      },
+      {
+        "pid": "4",
+        "quantity": 5
       }
     ],
     "idc": 3
+  },
+  {
+    "products": [
+      {
+        "pid": "4",
+        "quantity": 2
+      }
+    ],
+    "idc": 4
   }
 ]

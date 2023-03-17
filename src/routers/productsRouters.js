@@ -39,10 +39,11 @@ productsRouter.put('/:pid', async (req, res, next) => {
     try {
         const products = new productManager(paths.products)
         await products.updateProduct(req.params.pid, req.body)
+        res.send('<h1>PUT actualiza elemento</h1>')
     } catch (error) {
         res.status(400).json({ message: error.message })
     }
-    res.send('<h1>PUT actualiza elemento</h1>')
+    
 })
 
 productsRouter.delete('/:pid', async (req, res, next) => {

@@ -21,13 +21,13 @@
   },
   {
     "id": 5,
-    "title": "cinco",
-    "description": "decripcion producto cinco",
+    "title": "desde post 3",
+    "description": "desde post2 ",
     "price": 30,
     "thumbnail": "imagen",
-    "code": "005",
-    "status": true,
-    "stock": 450
+    "code": "106",
+    "status": false,
+    "stock": 203
   },
   {
     "id": 6,
